@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+runs/
+data/
+dataset/
+test_vsi/
+*.rar
+*.vsi
+*.tif
+*.tiff
+!training_data/**/*.tif
+!training_data/**/*.tiff
+*.json
+*.zip
