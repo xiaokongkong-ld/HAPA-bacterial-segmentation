@@ -29,8 +29,13 @@ def read_mask(path: str | Path) -> np.ndarray:
 
 
 def preprocess_patch(patch: np.ndarray) -> np.ndarray:
-    """Apply the CLAHE settings used by the historical patch loader."""
+    """Contrast-stretch and lightly Gaussian-filter the microscopy patch."""
     if patch.dtype != np.uint16 or patch.ndim != 2:
         raise ValueError("Expected a 2D uint16 image patch")
-    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
-    return clahe.apply(patch).astype(np.float32)
+    lower, upper = np.percentile(patch, (1, 99))
+    if upper <= lower:
+        return np.zeros(patch.shape, dtype=np.float32)
+    stretched = np.clip((patch.astype(np.float32) - lower) /
+                        (upper - lower), 0, 1)
+    smoothed = cv2.GaussianBlur(stretched, (0, 0), sigmaX=0.7)
+    return (smoothed * 65535.0).astype(np.float32)
