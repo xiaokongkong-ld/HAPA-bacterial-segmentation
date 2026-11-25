@@ -1,5 +1,5 @@
-# 训练数据
+# Training data
 
-此目录包含当前公开的 20 张 HAPA 细菌分割训练用灰度显微图像及其对应的人工标注（文件名以 `_col.tif` 结尾）。标注中 0 表示背景，255 表示细菌。
+This directory contains the 20 grayscale microscopy TIFFs in the current public HAPA bacterial-segmentation training split and their paired manual masks (`_col.tif`). Mask pixels use 0 for background and 255 for bacteria.
 
-每对图像与标注位于同名文件夹中。后续版本可继续补充其他显微图像。
+Each image and mask pair is stored in a folder with the same image name. Additional microscopy images may be added in later releases.
