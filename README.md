@@ -11,7 +11,7 @@ PyTorch U-Net code for bacterial segmentation in the HAPA study. This repository
 - `train_final.py`, `plot_train.py`: training and metric curves
 - `predict_v2.py`: segmentation of new images
 - `trained_model.pth`: trained U-Net weights
-- `training_data/train/`: a public subset of 36 image and mask pairs; mask origins are recorded in `training_data/manifest.csv`
+- `training_data/train/`: a public subset of paired microscopy images and masks
 
 ## Use
 
