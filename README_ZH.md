@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-本仓库提供 HAPA 研究中细菌分割使用的 PyTorch U-Net 代码，包括图像预处理、训练、预测、训练好的模型权重，以及部分显微图像和配对标注。目前公开的是完整训练数据中的一部分，共 36 对图像与掩膜。其中 31 份为已有标注、5 份为经复核认可的模型预测标注；来源及文件校验值见 `training_data/manifest.csv`。
+本仓库提供 HAPA 研究中细菌分割使用的 PyTorch U-Net 代码，包括图像预处理、训练、预测、训练好的模型权重，以及部分训练图像和配对标注。
 
 主要脚本：`model_v2.py` 为模型，`train_final.py` 为训练，`predict_v2.py` 为预测，`trained_model.pth` 为训练好的模型权重。
 
